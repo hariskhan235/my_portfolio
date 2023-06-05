@@ -1,45 +1,47 @@
-import 'dart:html';
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:flutter/services.dart' show rootBundle;
 
-class DownloadResume extends StatelessWidget {
-  const DownloadResume({Key? key}) : super(key: key);
+// import 'dart:html';
 
-  @override
-  Widget build(BuildContext context) {
-    AnchorElement anchorElement() {
-      return AnchorElement();
-    }
+// import 'package:flutter/material.dart';
+// import 'package:flutter/services.dart';
+// import 'package:flutter/services.dart' show rootBundle;
 
-    void downloadPdfFromAssets() async {
-      // Get the PDF file from the assets folder
-      var pdfData = await rootBundle
-          .load('assets/resume/LatestResumeFlutterFarooq.pdf');
+// class DownloadResume extends StatelessWidget {
+//   const DownloadResume({Key? key}) : super(key: key);
 
-      // Create a new anchor element
-      var anchor = anchorElement();
+//   @override
+//   Widget build(BuildContext context) {
+//     AnchorElement anchorElement() {
+//       return AnchorElement();
+//     }
 
-      // Create a Blob object from the PDF data
-      var blob = Blob([pdfData], 'application/pdf');
+//     void downloadPdfFromAssets() async {
+//       // Get the PDF file from the assets folder
+//       var pdfData = await rootBundle
+//           .load('assets/resume/LatestResumeFlutterFarooq.pdf');
 
-      // Set the anchor's href to the Blob object URL
-      anchor.href = Url.createObjectUrl(blob);
+//       // Create a new anchor element
+//       var anchor = anchorElement();
 
-      // Set the anchor's download attribute to a file name
-      anchor.download = 'LatestResumeFlutterFarooq.pdf';
+//       // Create a Blob object from the PDF data
+//       var blob = Blob([pdfData], 'application/pdf');
 
-      // Click the anchor to initiate the download
-      anchor.click();
-    }
+//       // Set the anchor's href to the Blob object URL
+//       anchor.href = Url.createObjectUrl(blob);
 
-    return ElevatedButton(
-        onPressed: () {
-          downloadPdfFromAssets();
-        },
-        child: const Padding(
-          padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
-          child: Text("Download My Resume"),
-        ));
-  }
-}
+//       // Set the anchor's download attribute to a file name
+//       anchor.download = 'LatestResumeFlutterFarooq.pdf';
+
+//       // Click the anchor to initiate the download
+//       anchor.click();
+//     }
+
+//     return ElevatedButton(
+//         onPressed: () {
+//           downloadPdfFromAssets();
+//         },
+//         child: const Padding(
+//           padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 10),
+//           child: Text("Download My Resume"),
+//         ));
+//   }
+// }

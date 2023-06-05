@@ -9,115 +9,124 @@ import 'metaconstants.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class SharedWidget{
-
-  Widget homeSectionWidget(BuildContext context, heigth,width,bool ismobile,tabletordektop)
-  {
+class SharedWidget {
+  Widget homeSectionWidget(
+      BuildContext context, heigth, width, bool ismobile, tabletordektop) {
     return SizedBox(
-      height:ismobile?heigth/1.2:heigth / 1.5,
-      child: ismobile?  Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-
-        children: [
-          Expanded(
-            flex: 2,
-            child: Container(
-                margin: const EdgeInsets.only(top: 40, bottom: 40),
-                // width: 200,
-                // height: 300,
-                child: Center(
-                  child: Image.asset(
-                    "assets/images/man.png",
-                    scale:1.1,
-                    fit: BoxFit.contain,
-                  ),
-                )),
-          ),
-           Expanded(
-             child: Padding(
-              padding: const EdgeInsets.all(10.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  Expanded(
-                    child: Text(
-                      '{"I_Am:',
-                      style: Theme.of(context).textTheme.headline2?.copyWith(fontSize: 16),
-                    ),
-                  ),
-                   const Flexible(child: TypeWriterTextWidget(fontSize: 36,)),
-
-                   const Flexible(child: SocialMediaIconsWidget()),
-const SizedBox(height:20),
-                    const Flexible(flex:2,child: DownloadResume())
-                ],
-              ),
-          ),
-           ),
-          // Add the Lottie widget here
-
-        ],
-      ):Row(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Expanded(
-            child: Padding(
-              padding: EdgeInsets.only(
-                left: width / 18,),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Flexible(
-                    flex: 1,
-                    child: Text(
-                      '{"I_Am:',
-                      style: Theme.of(context).textTheme.headline2,
-                    ),
-                  ),
-                    const Expanded(
-                      flex: 2,
-                      child: Align(
-                        child: TypeWriterTextWidget(
-                        fontSize: 75,
-                  ),
-                      ),
-                    ),
-                  const SizedBox(
-                    height: 20,
-                  ),
-                  const  Flexible(child:  SocialMediaIconsWidget()),
-
-                  const  Flexible(child:  DownloadResume())
-                ],
-              ),
-            ),
-          ),
-          // Add the Lottie widget here
-          Container(
-              margin: EdgeInsets.only(right: width / 18 * 2, left: 10),
-              // width: 200,
-              // height: 300,
-              child: Center(
-                child: Image.asset(
-                  "assets/images/man.png",
-                  scale: tabletordektop=="tablet"?0.9 : 0.6,
-                  fit: BoxFit.contain,
+      height: ismobile ? heigth / 1.2 : heigth / 1.5,
+      child: ismobile
+          ? Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Container(
+                      margin: const EdgeInsets.only(top: 40, bottom: 40),
+                      // width: 200,
+                      // height: 300,
+                      child: Center(
+                        child: Image.asset(
+                          "assets/images/me.jpeg",
+                          scale: 1.1,
+                          fit: BoxFit.contain,
+                        ),
+                      )),
                 ),
-              )),
-        ],
-      ),
-    );
+                Expanded(
+                  child: Padding(
+                    padding: const EdgeInsets.all(10.0),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Expanded(
+                          child: Text(
+                            '{"I_Am:',
+                            style: Theme.of(context)
+                                .textTheme
+                                .displayMedium
+                                ?.copyWith(fontSize: 16),
+                          ),
+                        ),
+                        const Flexible(
+                            child: TypeWriterTextWidget(
+                          fontSize: 36,
+                        )),
 
+                        const Flexible(child: SocialMediaIconsWidget()),
+                        const SizedBox(height: 20),
+                        //const Flexible(flex:2,child: DownloadResume())
+                      ],
+                    ),
+                  ),
+                ),
+                // Add the Lottie widget here
+              ],
+            )
+          : Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Expanded(
+                  child: Padding(
+                    padding: EdgeInsets.only(
+                      left: width / 18,
+                    ),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Flexible(
+                          flex: 1,
+                          child: Text(
+                            '{"I_Am:',
+                            style: Theme.of(context).textTheme.displayMedium,
+                          ),
+                        ),
+                        const Expanded(
+                          flex: 2,
+                          child: Align(
+                            child: TypeWriterTextWidget(
+                              fontSize: 75,
+                            ),
+                          ),
+                        ),
+                        const SizedBox(
+                          height: 20,
+                        ),
+                        const Flexible(child: SocialMediaIconsWidget()),
+
+                        //const  Flexible(child:  DownloadResume())
+                      ],
+                    ),
+                  ),
+                ),
+                // Add the Lottie widget here
+                Container(
+                    margin: EdgeInsets.only(right: width / 18 * 2, left: 10),
+                    // widt5h: 200,
+                    // height: 300,
+                    child: Center(
+                      child: Image.asset(
+                        "assets/images/me.jpeg",
+                        scale: tabletordektop == "tablet" ? 0.9 : 0.6,
+                        fit: BoxFit.contain,
+                      ),
+                    )),
+              ],
+            ),
+    );
   }
-  Widget projectSectionWidget(BuildContext  context,heigth,width,bool ismobile,tabletordesktop)
-  {
+
+  Widget projectSectionWidget(
+      BuildContext context, heigth, width, bool ismobile, tabletordesktop) {
     return Container(
-      color: Theme.of(context).backgroundColor,
+      color: Theme.of(context).colorScheme.background,
       height: heigth / 1.5,
       child: Center(
         child: Column(children: [
-          Expanded(child: Center(child: Text("Projects", style: Theme.of(context).textTheme.headline3))),
+          Expanded(
+              child: Center(
+                  child: Text("Projects",
+                      style: Theme.of(context).textTheme.displaySmall))),
           Expanded(
             flex: 4,
             child: SizedBox(
@@ -128,15 +137,16 @@ const SizedBox(height:20),
                 itemBuilder: (context, index) {
                   final Uri url = Uri.parse(projects[index].gitlink);
                   return Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 2.0, vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 2.0, vertical: 10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Expanded(
-                          flex:4,
+                          flex: 4,
                           child: GestureDetector(
-                            onTap: ()async {
+                            onTap: () async {
                               if (await canLaunchUrl(url)) {
                                 await launchUrl(url);
                               }
@@ -158,14 +168,16 @@ const SizedBox(height:20),
                               crossAxisAlignment: CrossAxisAlignment.center,
                               // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                 Expanded(
-                                   child: SelectableText(
+                                Expanded(
+                                  child: SelectableText(
                                     projects[index].projectName,
-                                    style: Theme.of(context).textTheme.headline4,
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .headlineMedium,
+                                  ),
                                 ),
-                                 ),
-                                 Expanded(
-                                   child: IconButton(
+                                Expanded(
+                                  child: IconButton(
                                     onPressed: () async {
                                       if (await canLaunchUrl(url)) {
                                         await launchUrl(url);
@@ -175,8 +187,8 @@ const SizedBox(height:20),
                                       FontAwesomeIcons.link,
                                       size: 16,
                                     ),
+                                  ),
                                 ),
-                                 ),
                               ],
                             ),
                           ),
@@ -191,17 +203,17 @@ const SizedBox(height:20),
         ]),
       ),
     );
-
   }
 
-
-  Widget skillsSectionWidget(BuildContext context,heigth,width)
-  {
-    return Container(
+  Widget skillsSectionWidget(BuildContext context, heigth, width) {
+    return SizedBox(
       height: heigth / 1.5,
       child: Center(
         child: Column(children: [
-          Expanded(child: Center(child: Text("Skills", style: Theme.of(context).textTheme.headline3))),
+          Expanded(
+              child: Center(
+                  child: Text("Skills",
+                      style: Theme.of(context).textTheme.displaySmall))),
           Expanded(
             flex: 4,
             child: SizedBox(
@@ -210,21 +222,28 @@ const SizedBox(height:20),
                 scrollDirection: Axis.horizontal,
                 itemCount: skills.length,
                 itemBuilder: (context, index) {
-
                   return Container(
-                    padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 10),
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10.0, vertical: 10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Expanded(
-                          flex:1,
+                          flex: 1,
                           child: Container(
                             margin: const EdgeInsets.all(8.0),
-                            child: Image.asset(skills[index].imageString, fit: BoxFit.cover, height: 80,),
+                            child: Image.asset(
+                              skills[index].imageString,
+                              fit: BoxFit.cover,
+                              height: 80,
+                            ),
                           ),
                         ),
-                        Expanded(child: Text(skills[index].skillName, style: Theme.of(context).textTheme.headline4))
+                        Expanded(
+                            child: Text(skills[index].skillName,
+                                style:
+                                    Theme.of(context).textTheme.headlineMedium))
                       ],
                     ),
                   );
@@ -235,81 +254,83 @@ const SizedBox(height:20),
         ]),
       ),
     );
-
-
   }
 
-  Widget aboutSectionWidget(BuildContext context,heigth,width)
-  {
-
+  Widget aboutSectionWidget(BuildContext context, heigth, width) {
     return SizedBox(
       height: heigth / 2,
       child: Column(
         children: [
           Expanded(
-            child:  Center(child: SelectableText("About", style: Theme.of(context).textTheme.headline3)),
+            child: Center(
+                child: SelectableText("About",
+                    style: Theme.of(context).textTheme.displaySmall)),
           ),
-           Expanded(
-             flex: 2,
-             child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: width /18),
+          Expanded(
+            flex: 2,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: width / 18),
               child: FittedBox(
                 fit: BoxFit.contain,
                 child: SelectableText(
-                  "As a Professional and creative individual, I always \n  Thrive for the challenging environment which drive me  to achieve my goals. \n Moreover to pursue my own aspirations, I am passionate about helping others to reach their \n full potential and contribute to a better world. \n With my strong drive and technical skills, as detailed in my resume, \n I am confident in my ability to successfully execute any project or goal I set my mind to. \n -Farooq",
-                  style: Theme.of(context).textTheme.headline5, textAlign: TextAlign.center,),
+                  "As a Professional and creative individual, I always \n  Thrive for the challenging environment which drive me  to achieve my goals. \n Moreover to pursue my own aspirations, I am passionate about helping others to reach their \n full potential and contribute to a better world. \n With my strong drive and technical skills, as detailed in my resume, \n I am confident in my ability to successfully execute any project or goal I set my mind to. \n -Haris",
+                  style: Theme.of(context).textTheme.headlineSmall,
+                  textAlign: TextAlign.center,
+                ),
               ),
+            ),
           ),
-           ),
         ],
       ),
     );
   }
-Widget contactSectionWidget(BuildContext context,heigth,width)
-{
 
-  return Container(
-      color: Theme.of(context).backgroundColor,
-  height: heigth / 1.5,
-child: Row(
-  children: <Widget>[
-
-     Expanded(
-       child: Column(
+  Widget contactSectionWidget(BuildContext context, heigth, width) {
+    return Container(
+      color: Theme.of(context).colorScheme.background,
+      height: heigth / 1.5,
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: Column(
               children: const [
                 Flexible(
-                    flex: 2,
-                    child: ContactInfo(heading: "Email:", info: "farooqafridi958@gmail.com",)),
+                    flex: 1,
+                    child: ContactInfo(
+                      heading: "Email:",
+                      info: "harisakhtar022@gmail.com",
+                    )),
 
-                Flexible(child: ContactInfo(heading: "Mobile Number:", info: "+923079070079         ",)),
+                Flexible(
+                    child: ContactInfo(
+                  heading: "Mobile Number:",
+                  info: "            +923139848047         ",
+                )),
 
-                  Flexible(child:  SocialMediaIconsWidget()),
+                Flexible(child: SocialMediaIconsWidget()),
 
-                  Flexible(child:  DownloadResume())
-
-
+                //   Flexible(child:  DownloadResume())
               ],
             ),
-     ),
-     const Expanded(flex:1,child: CircleAvatar(
-         maxRadius: 200,
-         backgroundImage: AssetImage("assets/images/me2.png"),
-         //child: Image.asset("assets/images/me2.png",fit: BoxFit.fill,)
-     ))
+          ),
+          //  const Expanded(flex:1,child: CircleAvatar(
+          //      maxRadius: 150,
+          //      backgroundImage: AssetImage("assets/images/me2.png"),
+          //      //child: Image.asset("assets/images/me2.png",fit: BoxFit.fill,)
+          //  ))
         ],
-),
+      ),
+    );
+  }
 
-  );
-}
-Widget endingFooter(BuildContext context){
-    return  Container(
-        color: Theme.of(context).backgroundColor,
+  Widget endingFooter(BuildContext context) {
+    return Container(
+        color: Theme.of(context).colorScheme.background,
         width: double.infinity,
         padding: const EdgeInsets.all(15),
         child: const Center(
           child: Text(
-              "© 2022 M Farooq Khan. All Rights Reserved. Website created with Flutter ❤️"),
+              "© 2023 M Haris Akhtar. All Rights Reserved. Website created with Flutter ❤️"),
         ));
-
-}
+  }
 }

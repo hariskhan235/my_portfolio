@@ -14,14 +14,14 @@ class TypeWriterTextWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       child: DefaultTextStyle(
-        style: Theme.of(context).textTheme.headline1?.copyWith(fontSize: fontSize) ?? const TextStyle(),
+        style: Theme.of(context).textTheme.displayLarge?.copyWith(fontSize: fontSize) ?? const TextStyle(),
         child: FittedBox(
           child: AnimatedTextKit(
             totalRepeatCount: 100,
             animatedTexts: [
-              TypewriterAnimatedText('M Farooq Khan"}', speed: const Duration(milliseconds: 200), ),
-              TypewriterAnimatedText('A Mobile Developer Flutter"}', speed: const Duration(milliseconds: 200),),
-              TypewriterAnimatedText('A .Net Developer"}', speed: const Duration(milliseconds: 200),),
+              TypewriterAnimatedText('M Haris Akhtar"}', speed: const Duration(milliseconds: 200), ),
+              TypewriterAnimatedText('A Flutter Mobile Application Developer"}', speed: const Duration(milliseconds: 200),),
+              TypewriterAnimatedText('A Java Developer"}', speed: const Duration(milliseconds: 200),),
               TypewriterAnimatedText('Android Developer"}', speed: const Duration(milliseconds: 200),),
               TypewriterAnimatedText('iOS Developer"}', speed: const Duration(milliseconds: 200),),
               TypewriterAnimatedText('Cross Platform Developer"}', speed: const Duration(milliseconds: 200),),

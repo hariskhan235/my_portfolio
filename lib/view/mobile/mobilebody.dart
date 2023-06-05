@@ -6,6 +6,7 @@ import 'package:flutterprojects/utils/shared_component.dart';
 
 import '../../cubit/theme_cubit.dart';
 import '../../utils/metaconstants.dart';
+
 class MobileBodyScreen extends StatefulWidget {
   const MobileBodyScreen({Key? key}) : super(key: key);
 
@@ -14,8 +15,8 @@ class MobileBodyScreen extends StatefulWidget {
 }
 
 class _MobileBodyScreenState extends State<MobileBodyScreen> {
-  var height= 1.sh;
-  var width=1.sw;
+  var height = 1.sh;
+  var width = 1.sw;
   static const List<String> _sectionTitles = [
     "Home",
     'Projects',
@@ -25,15 +26,15 @@ class _MobileBodyScreenState extends State<MobileBodyScreen> {
   ];
   @override
   Widget build(BuildContext context) {
-    return  Scaffold(
+    return Scaffold(
       appBar: AppBar(
         elevation: 0,
         centerTitle: false,
         title: Padding(
-          padding: EdgeInsets.only(left: width /18),
+          padding: EdgeInsets.only(left: width / 18),
           child: const Center(
-            child:  Text(
-              "Farooq's Portfolio 🙂",
+            child: Text(
+              "Haris Akhtar's Portfolio 🙂",
               // style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
             ),
           ),
@@ -43,13 +44,10 @@ class _MobileBodyScreenState extends State<MobileBodyScreen> {
         child: ListView(
           children: [
             Row(
-
               children: <Widget>[
-
                 Expanded(
-
                   child: Padding(
-                    padding:  EdgeInsets.only(left: 8.0.sp),
+                    padding: EdgeInsets.only(left: 8.0.sp),
                     child: Align(
                       alignment: Alignment.topLeft,
                       child: Text(
@@ -72,9 +70,11 @@ class _MobileBodyScreenState extends State<MobileBodyScreen> {
                           value: state.theme == blueDarkTheme(),
                           onChanged: (value) {
                             if (value) {
-                              BlocProvider.of<ThemeCubit>(context).switchTheme();
+                              BlocProvider.of<ThemeCubit>(context)
+                                  .switchTheme();
                             } else {
-                              BlocProvider.of<ThemeCubit>(context).switchTheme();
+                              BlocProvider.of<ThemeCubit>(context)
+                                  .switchTheme();
                             }
                           },
                         ),
@@ -91,25 +91,24 @@ class _MobileBodyScreenState extends State<MobileBodyScreen> {
                   title: Text(sectionTitle),
                   onTap: () {
                     // Scroll to the corresponding section
-
                   },
                 ),
               ),
           ],
         ),
       ),
-
-   body: ListView(
-
-     children: [
-       SharedWidget().homeSectionWidget(context, height, width, true,"none"),
-       SharedWidget().projectSectionWidget(context, 1.sh, 1.sw, false, "none"),
-       SharedWidget().skillsSectionWidget(context, 1.sh, 1.sw),
-       SharedWidget().aboutSectionWidget(context, 1.sh, 1.sw),
-       SharedWidget().contactSectionWidget(context, 1.sh, 1.sw),
-       SharedWidget().endingFooter(context)
-     ],
-   ),
+      body: ListView(
+        children: [
+          SharedWidget()
+              .homeSectionWidget(context, height, width, true, "none"),
+          SharedWidget()
+              .projectSectionWidget(context, 1.sh, 1.sw, false, "none"),
+          SharedWidget().skillsSectionWidget(context, 1.sh, 1.sw),
+          SharedWidget().aboutSectionWidget(context, 1.sh, 1.sw),
+          SharedWidget().contactSectionWidget(context, 1.sh, 1.sw),
+          SharedWidget().endingFooter(context)
+        ],
+      ),
     );
   }
 }

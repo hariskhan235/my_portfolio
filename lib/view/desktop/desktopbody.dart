@@ -40,7 +40,7 @@ class _DesktopBodyScreenState extends State<DesktopBodyScreen> {
           padding:
           EdgeInsets.only(left: MediaQuery.of(context).size.width / 18),
           child: const Text(
-            "Farooq's Portfolio 🙂",
+            "Haris Akhtar's Portfolio 🙂",
             // style: TextStyle(fontWeight: FontWeight.bold, color: Colors.blue),
           ),
         ),
@@ -55,7 +55,7 @@ class _DesktopBodyScreenState extends State<DesktopBodyScreen> {
               ); },
               child: Text(
                 sectionTitle,
-                style: Theme.of(context).textTheme.bodyText1,
+                style: Theme.of(context).textTheme.bodyLarge,
                 // style: const TextStyle(
                 //   color: Colors.black,
                 //   // Add a border around the text

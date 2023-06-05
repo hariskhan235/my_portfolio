@@ -28,6 +28,7 @@ class MyApp extends StatelessWidget {
           return ScreenUtilInit(
             builder: (BuildContext context, Widget? child) {
               return  MaterialApp(
+                debugShowCheckedModeBanner: false,
               theme: themeState.theme,
                 home: child ,
                 scrollBehavior: const MaterialScrollBehavior().copyWith(

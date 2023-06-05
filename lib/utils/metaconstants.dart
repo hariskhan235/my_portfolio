@@ -147,9 +147,9 @@ List<Projects> projects = [
 final List<SocialMedia> socialMediaLinks = [
   SocialMedia(name:
   FontAwesomeIcons.github,
-      link: 'https://github.com/farooq958'),
-  SocialMedia(name: FontAwesomeIcons.linkedin, link: 'https://www.linkedin.com/in/m-farooq-khan-94b82415b'),
-  SocialMedia(name: FontAwesomeIcons.twitter, link: 'https://twitter.com/farooqafridi958?t=1bGFWitBVcPuvYeO7zAjCA&s=08'),
+      link: 'https://github.com/hariskhan235'),
+  SocialMedia(name: FontAwesomeIcons.linkedin, link: 'https://www.linkedin.com/in/harisakhtaroficial/'),
+  //SocialMedia(name: FontAwesomeIcons.twitter, link: 'https://twitter.com/farooqafridi958?t=1bGFWitBVcPuvYeO7zAjCA&s=08'),
 ];
 
 
